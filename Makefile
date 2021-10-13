@@ -1,5 +1,5 @@
 build:
-	- docker kill $(docker ps -q)
+	- docker kill `docker ps -q`
 	docker build -t site-backend:latest .
 
 launch: build
