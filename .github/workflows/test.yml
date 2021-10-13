@@ -9,6 +9,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-python@v1
       - run: |
+          export DJANGO_SECRET=$(python -c "import secrets; print(secrets.token_urlsafe())")
           sudo make build
       - run: |
           sudo make test
