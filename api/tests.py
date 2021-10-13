@@ -10,3 +10,4 @@ class VersionAPITestCase(TestCase):
         resp = self.client.get('/api/version')
         resp_content = resp.content.decode('utf-8')
         self.assertIn('version', resp_content)
+        self.assertIn('stack', resp_content)
