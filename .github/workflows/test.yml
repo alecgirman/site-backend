@@ -1,0 +1,15 @@
+name: "Build and test"
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+      - run: |
+          echo "DJANGO_SECRET=LTuy0S90tiw9p_XUZg547gejgb5d4nArlyXR0S1wqSo" > .env
+          sudo make build
+      - run: |
+          sudo make test
