@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'http://localhost:80', 'http://localhost:2000']
 
-API_VERSION = '0.0.1'
+API_VERSION = '0.0.2'
 
 import subprocess
 gb_result = subprocess.run(['git', 'branch', '--show-current'], stdout=subprocess.PIPE).stdout
