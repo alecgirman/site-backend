@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-python@v1
       - run: |
           sudo apt update
-          sudo apt install docker.io make
+          sudo apt install -y docker.io
           sudo make build
       - run: |
           sudo make test
