@@ -1,5 +1,4 @@
 name: "Build and test"
-description: "Build container and run tests"
 on: [push]
 
 jobs:
