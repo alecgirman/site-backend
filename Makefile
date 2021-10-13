@@ -10,4 +10,4 @@ test: build
 	docker run --rm -p $(API_PORT):$(API_PORT)/tcp site-backend:latest python3 manage.py test
 
 launch: build
-	docker run --rm -it -p $(API_PORT):$(API_PORT)/tcp site-backend:latest
+	docker run --rm -d -p $(API_PORT):$(API_PORT)/tcp site-backend:latest
