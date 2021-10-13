@@ -1,11 +1,13 @@
-PORT=2000
+API_PORT=2000
 
 build:
 	- docker kill `docker ps -q`
-	docker build -t site-backend:latest .
+	sed s/API_PORT/$(API_PORT)/g Dockerfile > Dockerfile.out
+	docker build -t site-backend:latest -f Dockerfile.out .
+	rm Dockerfile.out
 
 test: build
-	docker run --rm -p $(PORT):$(PORT)/tcp site-backend:latest python3 manage.py test
+	docker run --rm -p $(API_PORT):$(API_PORT)/tcp site-backend:latest python3 manage.py test
 
 launch: build
-	docker run --rm -it -p $(PORT):$(PORT)/tcp site-backend:latest
+	docker run --rm -it -p $(API_PORT):$(API_PORT)/tcp site-backend:latest

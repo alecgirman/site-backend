@@ -4,5 +4,5 @@ WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 COPY . /code/
-EXPOSE 2000
-CMD python3 manage.py runserver 0:2000
+EXPOSE API_PORT
+CMD python3 manage.py runserver 0:API_PORT
