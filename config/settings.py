@@ -31,9 +31,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'http://localhost:80']
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'http://localhost:80', 'http://localhost:2000']
 
 API_VERSION = '0.0.1'
+
+import subprocess
+gb_result = subprocess.run(['git', 'branch', '--show-current'], stdout=subprocess.PIPE).stdout
+CURRENT_STACK = gb_result.decode('utf-8')
 
 
 # Application definition

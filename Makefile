@@ -11,3 +11,6 @@ test: build
 
 launch: build
 	docker run --rm -d -p $(API_PORT):$(API_PORT)/tcp site-backend:latest
+
+launch-interactive: build
+	docker run --rm -it -p $(API_PORT):$(API_PORT)/tcp site-backend:latest
