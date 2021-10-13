@@ -10,8 +10,8 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-python@v1
       - run: |
-        sudo apt update
-        sudo apt install docker.io make
-        sudo make build
+          sudo apt update
+          sudo apt install docker.io make
+          sudo make build
       - run: |
-        sudo make test
+          sudo make test
